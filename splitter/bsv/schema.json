@@ -1,0 +1,386 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "bsv.json",
+  "type": "object",
+  "title": "BitcoinSV Block JSON Schema",
+  "description": "An explanation about the purpose of this instance.",
+  "required": [
+    "hash",
+    "size",
+    "height",
+    "version",
+    "merkle_root",
+    "tx",
+    "time",
+    "median_time",
+    "nonce",
+    "bits",
+    "difficulty",
+    "chain_work",
+    "prev_hash"
+  ],
+  "properties": {
+    "hash": {
+      "$id": "#/properties/hash",
+      "type": "string",
+      "title": "The Hash Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "00000000d1145790a8694403d4063f323d499e655c83426834d4ce2f8dd4a2ee"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "size": {
+      "$id": "#/properties/size",
+      "type": "integer",
+      "title": "The Size Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [
+        490
+      ]
+    },
+    "height": {
+      "$id": "#/properties/height",
+      "type": "integer",
+      "title": "The Height Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [
+        170
+      ]
+    },
+    "version": {
+      "$id": "#/properties/version",
+      "type": "integer",
+      "title": "The Version Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "merkle_root": {
+      "$id": "#/properties/merkle_root",
+      "type": "string",
+      "title": "The Merkle_root Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "7dac2c5666815c17a3b36427de37bb9d2e2c5ccec3f8633eb91a4205cb4c10ff"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "tx": {
+      "$id": "#/properties/tx",
+      "type": "array",
+      "title": "The Tx Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "items": {
+        "$id": "#/properties/tx/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "description": "An explanation about the purpose of this instance.",
+        "required": [
+          "tx_id",
+          "hash",
+          "version",
+          "size",
+          "lock_time",
+          "vin",
+          "vout"
+        ],
+        "properties": {
+          "tx_id": {
+            "$id": "#/properties/tx/items/properties/tx_id",
+            "type": "string",
+            "title": "The Tx_id Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "b1fea52486ce0c62bb442b530a3f0132b826c74e473d1f2c220bfa78111c5082"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "hash": {
+            "$id": "#/properties/tx/items/properties/hash",
+            "type": "string",
+            "title": "The Hash Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "b1fea52486ce0c62bb442b530a3f0132b826c74e473d1f2c220bfa78111c5082"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "version": {
+            "$id": "#/properties/tx/items/properties/version",
+            "type": "integer",
+            "title": "The Version Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          },
+          "size": {
+            "$id": "#/properties/tx/items/properties/size",
+            "type": "integer",
+            "title": "The Size Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+              134
+            ]
+          },
+          "lock_time": {
+            "$id": "#/properties/tx/items/properties/lock_time",
+            "type": "integer",
+            "title": "The Lock_time Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          },
+          "vin": {
+            "$id": "#/properties/tx/items/properties/vin",
+            "type": "array",
+            "title": "The Vin Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "items": {
+              "$id": "#/properties/tx/items/properties/vin/items",
+              "type": "object",
+              "title": "The Items Schema",
+              "description": "An explanation about the purpose of this instance.",
+              "anyOf": [
+                {
+                  "required": [
+                  "coinbase",
+                  "sequence"
+                  ]
+                },
+                {
+                  "required": [
+                    "script_sig",
+                    "sequence",
+                    "tx_id_origin",
+                    "vout_num_origin"
+                  ]
+                }
+              ],
+              "properties": {
+                "coinbase": {
+                  "$id": "#/properties/tx/items/properties/vin/items/properties/coinbase",
+                  "type": "string",
+                  "title": "The Coinbase Schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    "04ffff001d0102"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "sequence": {
+                  "$id": "#/properties/tx/items/properties/vin/items/properties/sequence",
+                  "type": "integer",
+                  "title": "The Sequence Schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    4294967295
+                  ]
+                },
+                "tx_id_origin": {
+                  "$id": "#/properties/tx/items/properties/vin/items/properties/tx_id_origin",
+                  "type": "string",
+                  "title": "The Tx_id_origin Schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    "b1fea52486ce0c62bb442b530a3f0132b826c74e473d1f2c220bfa78111c5082"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "vout_num_origin": {
+                  "$id": "#/properties/tx/items/properties/vin/items/properties/vout_num_origin",
+                  "type": "integer",
+                  "title": "The Vout_num_origin Schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    5
+                  ]
+                }
+              }
+            }
+          },
+          "vout": {
+            "$id": "#/properties/tx/items/properties/vout",
+            "type": "array",
+            "title": "The Vout Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "items": {
+              "$id": "#/properties/tx/items/properties/vout/items",
+              "type": "object",
+              "title": "The Items Schema",
+              "description": "An explanation about the purpose of this instance.",
+              "required": [
+                "value",
+                "is_coinbase",
+                "script_pubkey",
+                "type"
+              ],
+              "properties": {
+                "value": {
+                  "$id": "#/properties/tx/items/properties/vout/items/properties/value",
+                  "type": "integer",
+                  "title": "The Value Schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    50
+                  ]
+                },
+                "is_coinbase": {
+                  "$id": "#/properties/tx/items/properties/vout/items/properties/is_coinbase",
+                  "type": "boolean",
+                  "title": "The Is_coinbase Schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": false,
+                  "examples": [
+                    true
+                  ]
+                },
+                "script_pubkey": {
+                  "$id": "#/properties/tx/items/properties/vout/items/properties/script_pubkey",
+                  "type": "string",
+                  "title": "The Script_pubkey Schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    "4104d46c4968bde02899d2aa0963367c7a6ce34eec332b32e42e5f3407e052d64ac625da6f0718e7b302140434bd725706957c092db53805b821a85b23a7ac61725bac"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "required_signatures": {
+                  "$id": "#/properties/tx/items/properties/vout/items/properties/required_signatures",
+                  "type": "integer",
+                  "title": "The Required_signatures Schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": 0,
+                  "examples": [
+                    1
+                  ]
+                },
+                "type": {
+                  "$id": "#/properties/tx/items/properties/vout/items/properties/type",
+                  "type": "string",
+                  "title": "The Type Schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                    "pubkey"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "addresses": {
+                  "$id": "#/properties/tx/items/properties/vout/items/properties/addresses",
+                  "type": "array",
+                  "title": "The Addresses Schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "items": {
+                    "$id": "#/properties/tx/items/properties/vout/items/properties/addresses/items",
+                    "type": "string",
+                    "title": "The Items Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "1PSSGeFHDnKNxiEyFrD1wcEaHr9hrQDDWc"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "time": {
+      "$id": "#/properties/time",
+      "type": "integer",
+      "title": "The Time Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [
+        1231731025
+      ]
+    },
+    "median_time": {
+      "$id": "#/properties/median_time",
+      "type": "integer",
+      "title": "The Median_time Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [
+        1231716245
+      ]
+    },
+    "nonce": {
+      "$id": "#/properties/nonce",
+      "type": "integer",
+      "title": "The Nonce Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [
+        1889418792
+      ]
+    },
+    "bits": {
+      "$id": "#/properties/bits",
+      "type": "string",
+      "title": "The Bits Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "1d00ffff"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "difficulty": {
+      "$id": "#/properties/difficulty",
+      "type": "number",
+      "title": "The Difficulty Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "chain_work": {
+      "$id": "#/properties/chain_work",
+      "type": "string",
+      "title": "The Chain_work Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "000000000000000000000000000000000000000000000000000000ab00ab00ab"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "prev_hash": {
+      "$id": "#/properties/prev_hash",
+      "type": "string",
+      "title": "The Prev_hash Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "000000002a22cfee1f2c846adbd12b3e183d4f97683f85dad08a79780a84bd55"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

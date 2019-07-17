@@ -1,0 +1,1295 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "eth.json",
+  "type": "object",
+  "title": "Ethereum Block JSON Schema",
+  "required": [
+    "block",
+    "uncles",
+    "transactions",
+    "internal_transactions",
+    "token_transactions",
+    "token_infos",
+    "enses"
+  ],
+  "properties": {
+    "block": {
+      "$id": "#/properties/block",
+      "type": "object",
+      "title": "The Block Schema",
+      "required": [
+        "height",
+        "timestamp",
+        "parent_hash",
+        "sha_3_uncles",
+        "miner",
+        "miner_balance",
+        "difficulty",
+        "extra_data",
+        "logs_bloom",
+        "transaction_root",
+        "state_root",
+        "receipts_root",
+        "gas_used",
+        "gas_limit",
+        "nonce",
+        "mix_hash",
+        "hash",
+        "total_difficulty",
+        "size",
+        "block_reward",
+        "block_uncle_reward"
+      ],
+      "properties": {
+        "height": {
+          "$id": "#/properties/block/properties/height",
+          "type": "integer",
+          "title": "The Height Schema",
+          "default": 0,
+          "examples": [
+            6164282
+          ]
+        },
+        "timestamp": {
+          "$id": "#/properties/block/properties/timestamp",
+          "type": "integer",
+          "title": "The Timestamp Schema",
+          "default": 0,
+          "examples": [
+            1534517636
+          ]
+        },
+        "parent_hash": {
+          "$id": "#/properties/block/properties/parent_hash",
+          "type": "string",
+          "title": "The Parent_hash Schema",
+          "default": "",
+          "examples": [
+            "0x7513f1a0de322df9ccd1cea63d6abc51b9de440cde3e952707699176cba54e29"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "sha_3_uncles": {
+          "$id": "#/properties/block/properties/sha_3_uncles",
+          "type": "string",
+          "title": "The Sha_3_uncles Schema",
+          "default": "",
+          "examples": [
+            "0x0494cb204d087ddb48c5c6d4eae26db357e53a0982d937c5863dce9ea03b2e27"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "miner": {
+          "$id": "#/properties/block/properties/miner",
+          "type": "string",
+          "title": "The Miner Schema",
+          "default": "",
+          "examples": [
+            "0xEA674fdDe714fd979de3EdF0F56AA9716B898ec8"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "miner_balance": {
+          "$id": "#/properties/block/properties/miner_balance",
+          "type": "integer",
+          "title": "The Miner_balance Schema",
+          "default": 0,
+          "examples": [
+            908496023120421800000
+          ]
+        },
+        "difficulty": {
+          "$id": "#/properties/block/properties/difficulty",
+          "type": "integer",
+          "title": "The Difficulty Schema",
+          "default": 0,
+          "examples": [
+            3476023120925616
+          ]
+        },
+        "extra_data": {
+          "$id": "#/properties/block/properties/extra_data",
+          "type": "string",
+          "title": "The Extra_data Schema",
+          "default": "",
+          "examples": [
+            "0x65746865726d696e652d657532"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "logs_bloom": {
+          "$id": "#/properties/block/properties/logs_bloom",
+          "type": "string",
+          "title": "The Logs_bloom Schema",
+          "default": "",
+          "examples": [
+            "0x4e19b003212248149009b401220d486a0aa2919f43a22a54048145091aa02298801404c440b5c3046013540b913140248b5040042bacc005403022057d24006018e40a40198600124a07205801383c0883003050540c426dc4b5611e8d2180440138ea241ac5a240842480331b2d0c442c5230d1002c410008008111b80809c488a100b4928120a8c0d4904692b0001900088829c0a2242026610046012a58c0ee024c300670440c29013910041041511400318441b5804751c810099440002040c35003430001125701094602ae14c408886046108ed851041100604303701905342148e98001442801cd00d87002007304d2510d822221241044c441ac5108"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "transaction_root": {
+          "$id": "#/properties/block/properties/transaction_root",
+          "type": "string",
+          "title": "The Transaction_root Schema",
+          "default": "",
+          "examples": [
+            "0xec8380f877f5834226d1a59ea23a4b9f7b4445364829e66584ed51e8fabd0db3"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "state_root": {
+          "$id": "#/properties/block/properties/state_root",
+          "type": "string",
+          "title": "The State_root Schema",
+          "default": "",
+          "examples": [
+            "0x87fcd82a700ef61acaf2a7430697eea2ade7122d1923760539345bf429210771"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "receipts_root": {
+          "$id": "#/properties/block/properties/receipts_root",
+          "type": "string",
+          "title": "The Receipts_root Schema",
+          "default": "",
+          "examples": [
+            "0xd851433858e523874f0d0ba930b236ee06d351f5751007a7536cdb2d1fe89e8b"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "gas_used": {
+          "$id": "#/properties/block/properties/gas_used",
+          "type": "integer",
+          "title": "The Gas_used Schema",
+          "default": 0,
+          "examples": [
+            7991448
+          ]
+        },
+        "gas_limit": {
+          "$id": "#/properties/block/properties/gas_limit",
+          "type": "integer",
+          "title": "The Gas_limit Schema",
+          "default": 0,
+          "examples": [
+            8000029
+          ]
+        },
+        "nonce": {
+          "$id": "#/properties/block/properties/nonce",
+          "type": "string",
+          "title": "The Nonce Schema",
+          "default": "",
+          "examples": [
+            "0x76ecb96015397a5d"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "mix_hash": {
+          "$id": "#/properties/block/properties/mix_hash",
+          "type": "string",
+          "title": "The Mix_hash Schema",
+          "default": "",
+          "examples": [
+            "0x377c1d056804229686807c0995fb811a88681ac49b71dc6d5110b9ac6074aafe"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "hash": {
+          "$id": "#/properties/block/properties/hash",
+          "type": "string",
+          "title": "The Hash Schema",
+          "default": "",
+          "examples": [
+            "0x8085a610581f60215ea9ccf8e4cc0b885a5360b68cda13d7b75803bb8c76dcae"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "total_difficulty": {
+          "$id": "#/properties/block/properties/total_difficulty",
+          "type": "string",
+          "title": "The Total_difficulty Schema",
+          "default": "",
+          "examples": [
+            "6061492803028679601656"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "size": {
+          "$id": "#/properties/block/properties/size",
+          "type": "integer",
+          "title": "The Size Schema",
+          "default": 0,
+          "examples": [
+            27584
+          ]
+        },
+        "block_reward": {
+          "$id": "#/properties/block/properties/block_reward",
+          "type": "integer",
+          "title": "The Block_reward Schema",
+          "default": 0,
+          "examples": [
+            3470805000000000000
+          ]
+        },
+        "block_uncle_reward": {
+          "$id": "#/properties/block/properties/block_uncle_reward",
+          "type": "integer",
+          "title": "The Block_uncle_reward Schema",
+          "default": 0,
+          "examples": [
+            93750000000000000
+          ]
+        }
+      }
+    },
+    "uncles": {
+      "$id": "#/properties/uncles",
+      "type": "array",
+      "title": "The Uncles Schema",
+      "items": {
+        "$id": "#/properties/uncles/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "height",
+          "timestamp",
+          "parent_hash",
+          "sha_3_uncles",
+          "miner",
+          "miner_balance",
+          "difficulty",
+          "extra_data",
+          "logs_bloom",
+          "transaction_root",
+          "state_root",
+          "receipts_root",
+          "gas_used",
+          "gas_limit",
+          "nonce",
+          "mix_hash",
+          "hash",
+          "total_difficulty",
+          "size",
+          "block_height",
+          "reward"
+        ],
+        "properties": {
+          "height": {
+            "$id": "#/properties/uncles/items/properties/height",
+            "type": "integer",
+            "title": "The Height Schema",
+            "default": 0,
+            "examples": [
+              6164281
+            ]
+          },
+          "timestamp": {
+            "$id": "#/properties/uncles/items/properties/timestamp",
+            "type": "integer",
+            "title": "The Timestamp Schema",
+            "default": 0,
+            "examples": [
+              1534517623
+            ]
+          },
+          "parent_hash": {
+            "$id": "#/properties/uncles/items/properties/parent_hash",
+            "type": "string",
+            "title": "The Parent_hash Schema",
+            "default": "",
+            "examples": [
+              "0xdcee5b8d6932ff34cc282330b0e5efd85b458d5d7b489341ba462dafd5cb58f2"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "sha_3_uncles": {
+            "$id": "#/properties/uncles/items/properties/sha_3_uncles",
+            "type": "string",
+            "title": "The Sha_3_uncles Schema",
+            "default": "",
+            "examples": [
+              "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "miner": {
+            "$id": "#/properties/uncles/items/properties/miner",
+            "type": "string",
+            "title": "The Miner Schema",
+            "default": "",
+            "examples": [
+              "0xEA674fdDe714fd979de3EdF0F56AA9716B898ec8"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "miner_balance": {
+            "$id": "#/properties/uncles/items/properties/miner_balance",
+            "type": "integer",
+            "title": "The Miner_balance Schema",
+            "default": 0,
+            "examples": [
+              908496023120421800000
+            ]
+          },
+          "difficulty": {
+            "$id": "#/properties/uncles/items/properties/difficulty",
+            "type": "integer",
+            "title": "The Difficulty Schema",
+            "default": 0,
+            "examples": [
+              3476022584054704
+            ]
+          },
+          "extra_data": {
+            "$id": "#/properties/uncles/items/properties/extra_data",
+            "type": "string",
+            "title": "The Extra_data Schema",
+            "default": "",
+            "examples": [
+              "0x65746865726d696e652d657539"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "logs_bloom": {
+            "$id": "#/properties/uncles/items/properties/logs_bloom",
+            "type": "string",
+            "title": "The Logs_bloom Schema",
+            "default": "",
+            "examples": [
+              "0xc54ac9854824604c9c0c1000800cf02108094120a82a92408c620904024a0020418e028148840830a18041206129008b8304008408020042090868e36420000000c19081328510331ae16569c28440801305010054c889248043416470140a84046000400ec1a09763c4404150c0880004132010042120004898105110900008040180c0000120202b001c061281841140570001010140862a0000e60203ac540a11042002e0223038693114510483211d05008073902011d1c036083822090814180103a282100050800a094700411439a0c0090110b831414c806040003480a910218416182100004a8c600444a20310200800d888010c0005524018611500"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "transaction_root": {
+            "$id": "#/properties/uncles/items/properties/transaction_root",
+            "type": "string",
+            "title": "The Transaction_root Schema",
+            "default": "",
+            "examples": [
+              "0x10055e3a08522b1b885ac3e20654870643c1e22f2e71cd36c45f2f4b8d2648e0"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "state_root": {
+            "$id": "#/properties/uncles/items/properties/state_root",
+            "type": "string",
+            "title": "The State_root Schema",
+            "default": "",
+            "examples": [
+              "0x472b9b40af7ce8567e6759fa859dcc758ccda0f605735d4c094ee0db2f92116d"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "receipts_root": {
+            "$id": "#/properties/uncles/items/properties/receipts_root",
+            "type": "string",
+            "title": "The Receipts_root Schema",
+            "default": "",
+            "examples": [
+              "0x134e46fe45b8c1091e00bc479948cc72bdf38312386665db7019de59a4435498"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "gas_used": {
+            "$id": "#/properties/uncles/items/properties/gas_used",
+            "type": "integer",
+            "title": "The Gas_used Schema",
+            "default": 0,
+            "examples": [
+              7993460
+            ]
+          },
+          "gas_limit": {
+            "$id": "#/properties/uncles/items/properties/gas_limit",
+            "type": "integer",
+            "title": "The Gas_limit Schema",
+            "default": 0,
+            "examples": [
+              8000029
+            ]
+          },
+          "nonce": {
+            "$id": "#/properties/uncles/items/properties/nonce",
+            "type": "string",
+            "title": "The Nonce Schema",
+            "default": "",
+            "examples": [
+              "0x94131358093a3400"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "mix_hash": {
+            "$id": "#/properties/uncles/items/properties/mix_hash",
+            "type": "string",
+            "title": "The Mix_hash Schema",
+            "default": "",
+            "examples": [
+              "0x5361c5eb8f33e90a7dc5f8058ce2c376d22eee390f1ca96e6a49557f55706527"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "hash": {
+            "$id": "#/properties/uncles/items/properties/hash",
+            "type": "string",
+            "title": "The Hash Schema",
+            "default": "",
+            "examples": [
+              "0xa46bab136d4195372dc6bd3664ed48bf3f8f41303bc749f435b8fda81d74bb5c"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "total_difficulty": {
+            "$id": "#/properties/uncles/items/properties/total_difficulty",
+            "type": "string",
+            "title": "The Total_difficulty Schema",
+            "default": "",
+            "examples": [
+              "6061489327005558676040"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "size": {
+            "$id": "#/properties/uncles/items/properties/size",
+            "type": "integer",
+            "title": "The Size Schema",
+            "default": 0,
+            "examples": [
+              572
+            ]
+          },
+          "block_height": {
+            "$id": "#/properties/uncles/items/properties/block_height",
+            "type": "integer",
+            "title": "The Block_height Schema",
+            "default": 0,
+            "examples": [
+              6164282
+            ]
+          },
+          "reward": {
+            "$id": "#/properties/uncles/items/properties/reward",
+            "type": "integer",
+            "title": "The Reward Schema",
+            "default": 0,
+            "examples": [
+              2625000000000000000
+            ]
+          }
+        }
+      }
+    },
+    "transactions": {
+      "$id": "#/properties/transactions",
+      "type": "array",
+      "title": "The Transactions Schema",
+      "items": {
+        "$id": "#/properties/transactions/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "hash",
+          "block_height",
+          "from",
+          "from_balance",
+          "to",
+          "to_balance",
+          "value",
+          "gas_number",
+          "gas_price",
+          "nonce",
+          "v",
+          "r",
+          "s",
+          "timestamp",
+          "tx_block_index",
+          "status",
+          "type",
+          "cumulative_gas_used",
+          "gas_used",
+          "contract_address",
+          "logs_bloom",
+          "root",
+          "log_len",
+          "tx_size"
+        ],
+        "properties": {
+          "hash": {
+            "$id": "#/properties/transactions/items/properties/hash",
+            "type": "string",
+            "title": "The Hash Schema",
+            "default": "",
+            "examples": [
+              "0x527d941f26a2e7054f8c0e8413757c1ed3358f93261baad4343d276e7a55d60d"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "block_height": {
+            "$id": "#/properties/transactions/items/properties/block_height",
+            "type": "integer",
+            "title": "The Block_height Schema",
+            "default": 0,
+            "examples": [
+              6164282
+            ]
+          },
+          "from": {
+            "$id": "#/properties/transactions/items/properties/from",
+            "type": "string",
+            "title": "The From Schema",
+            "default": "",
+            "examples": [
+              "0x8d9cC1d96Cc7F98b73Fb9c70df1b2f50dAeC6166"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "from_balance": {
+            "$id": "#/properties/transactions/items/properties/from_balance",
+            "type": "integer",
+            "title": "The From_balance Schema",
+            "default": 0,
+            "examples": [
+              2.23431956036902e+22
+            ]
+          },
+          "to": {
+            "$id": "#/properties/transactions/items/properties/to",
+            "type": "string",
+            "title": "The To Schema",
+            "default": "",
+            "examples": [
+              "0x1a8638F9d1E65f2a65Be37cBD427d0d3758A1d9b"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "to_balance": {
+            "$id": "#/properties/transactions/items/properties/to_balance",
+            "type": "integer",
+            "title": "The To_balance Schema",
+            "default": 0,
+            "examples": [
+              3846393465000000000
+            ]
+          },
+          "value": {
+            "$id": "#/properties/transactions/items/properties/value",
+            "type": "integer",
+            "title": "The Value Schema",
+            "default": 0,
+            "examples": [
+              3800000000000000000
+            ]
+          },
+          "gas_number": {
+            "$id": "#/properties/transactions/items/properties/gas_number",
+            "type": "integer",
+            "title": "The Gas_number Schema",
+            "default": 0,
+            "examples": [
+              90000
+            ]
+          },
+          "gas_price": {
+            "$id": "#/properties/transactions/items/properties/gas_price",
+            "type": "integer",
+            "title": "The Gas_price Schema",
+            "default": 0,
+            "examples": [
+              133000000000
+            ]
+          },
+          "nonce": {
+            "$id": "#/properties/transactions/items/properties/nonce",
+            "type": "integer",
+            "title": "The Nonce Schema",
+            "default": 0,
+            "examples": [
+              1446
+            ]
+          },
+          "v": {
+            "$id": "#/properties/transactions/items/properties/v",
+            "type": "string",
+            "title": "The V Schema",
+            "default": "",
+            "examples": [
+              "0x25"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "r": {
+            "$id": "#/properties/transactions/items/properties/r",
+            "type": "string",
+            "title": "The R Schema",
+            "default": "",
+            "examples": [
+              "0x9f3bb3a76460114af7219e857427dc564099e12abd505e3d2224c7722351d25"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "s": {
+            "$id": "#/properties/transactions/items/properties/s",
+            "type": "string",
+            "title": "The S Schema",
+            "default": "",
+            "examples": [
+              "0x532470b9fd505132825178ddffe95dbb4c3296e9539ca2630949ab58d7f5e413"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "timestamp": {
+            "$id": "#/properties/transactions/items/properties/timestamp",
+            "type": "integer",
+            "title": "The Timestamp Schema",
+            "default": 0,
+            "examples": [
+              1534517636
+            ]
+          },
+          "tx_block_index": {
+            "$id": "#/properties/transactions/items/properties/tx_block_index",
+            "type": "integer",
+            "title": "The Tx_block_index Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          },
+          "status": {
+            "$id": "#/properties/transactions/items/properties/status",
+            "type": "integer",
+            "title": "The Status Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          },
+          "type": {
+            "$id": "#/properties/transactions/items/properties/type",
+            "type": "integer",
+            "title": "The Type Schema",
+            "default": 0,
+            "examples": [
+              2
+            ]
+          },
+          "cumulative_gas_used": {
+            "$id": "#/properties/transactions/items/properties/cumulative_gas_used",
+            "type": "integer",
+            "title": "The Cumulative_gas_used Schema",
+            "default": 0,
+            "examples": [
+              21000
+            ]
+          },
+          "gas_used": {
+            "$id": "#/properties/transactions/items/properties/gas_used",
+            "type": "integer",
+            "title": "The Gas_used Schema",
+            "default": 0,
+            "examples": [
+              21000
+            ]
+          },
+          "contract_address": {
+            "$id": "#/properties/transactions/items/properties/contract_address",
+            "type": "string",
+            "title": "The Contract_address Schema",
+            "default": "",
+            "examples": [
+              ""
+            ],
+            "pattern": "^(.*)$"
+          },
+          "logs_bloom": {
+            "$id": "#/properties/transactions/items/properties/logs_bloom",
+            "type": "string",
+            "title": "The Logs_bloom Schema",
+            "default": "",
+            "examples": [
+              "0x0"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "root": {
+            "$id": "#/properties/transactions/items/properties/root",
+            "type": "string",
+            "title": "The Root Schema",
+            "default": "",
+            "examples": [
+              "0x"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "log_len": {
+            "$id": "#/properties/transactions/items/properties/log_len",
+            "type": "integer",
+            "title": "The Log_len Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          },
+          "tx_size": {
+            "$id": "#/properties/transactions/items/properties/tx_size",
+            "type": "integer",
+            "title": "The Tx_size Schema",
+            "default": 0,
+            "examples": [
+              113
+            ]
+          }
+        }
+      }
+    },
+    "internal_transactions": {
+      "$id": "#/properties/internal_transactions",
+      "type": "array",
+      "title": "The Internal_transactions Schema",
+      "items": {
+        "$id": "#/properties/internal_transactions/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "block_height",
+          "timestamp",
+          "hash",
+          "tx_index",
+          "internal_tx_index",
+          "type",
+          "from",
+          "from_balance",
+          "to",
+          "to_balance",
+          "value",
+          "gas",
+          "gas_used"
+        ],
+        "properties": {
+          "block_height": {
+            "$id": "#/properties/internal_transactions/items/properties/block_height",
+            "type": "integer",
+            "title": "The Block_height Schema",
+            "default": 0,
+            "examples": [
+              6164282
+            ]
+          },
+          "timestamp": {
+            "$id": "#/properties/internal_transactions/items/properties/timestamp",
+            "type": "integer",
+            "title": "The Timestamp Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          },
+          "hash": {
+            "$id": "#/properties/internal_transactions/items/properties/hash",
+            "type": "string",
+            "title": "The Hash Schema",
+            "default": "",
+            "examples": [
+              "0x0f54824cbb3d4f1494c5b761ea519fa69f884a7a8f759287679b7d0a7059768b"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "tx_index": {
+            "$id": "#/properties/internal_transactions/items/properties/tx_index",
+            "type": "integer",
+            "title": "The Tx_index Schema",
+            "default": 0,
+            "examples": [
+              6
+            ]
+          },
+          "internal_tx_index": {
+            "$id": "#/properties/internal_transactions/items/properties/internal_tx_index",
+            "type": "integer",
+            "title": "The Internal_tx_index Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          },
+          "type": {
+            "$id": "#/properties/internal_transactions/items/properties/type",
+            "type": "string",
+            "title": "The Type Schema",
+            "default": "",
+            "examples": [
+              "CALL"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "from": {
+            "$id": "#/properties/internal_transactions/items/properties/from",
+            "type": "string",
+            "title": "The From Schema",
+            "default": "",
+            "examples": [
+              "0xdd9fd6b6f8f7ea932997992bbe67eabb3e316f3c"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "from_balance": {
+            "$id": "#/properties/internal_transactions/items/properties/from_balance",
+            "type": "integer",
+            "title": "The From_balance Schema",
+            "default": 0,
+            "examples": [
+              2.1445478323940093e+22
+            ]
+          },
+          "to": {
+            "$id": "#/properties/internal_transactions/items/properties/to",
+            "type": "string",
+            "title": "The To Schema",
+            "default": "",
+            "examples": [
+              "0xd71cbd05fc1935b21753991ee9c83bf21404a739"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "to_balance": {
+            "$id": "#/properties/internal_transactions/items/properties/to_balance",
+            "type": "integer",
+            "title": "The To_balance Schema",
+            "default": 0,
+            "examples": [
+              2.990858430448601e+21
+            ]
+          },
+          "value": {
+            "$id": "#/properties/internal_transactions/items/properties/value",
+            "type": "integer",
+            "title": "The Value Schema",
+            "default": 0,
+            "examples": [
+              437680000000000
+            ]
+          },
+          "gas": {
+            "$id": "#/properties/internal_transactions/items/properties/gas",
+            "type": "integer",
+            "title": "The Gas Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          },
+          "gas_used": {
+            "$id": "#/properties/internal_transactions/items/properties/gas_used",
+            "type": "integer",
+            "title": "The Gas_used Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          }
+        }
+      }
+    },
+    "token_transactions": {
+      "$id": "#/properties/token_transactions",
+      "type": "array",
+      "title": "The Token_transactions Schema",
+      "items": {
+        "$id": "#/properties/token_transactions/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "block_height",
+          "timestamp",
+          "parent_tx_hash",
+          "parent_tx_index",
+          "from",
+          "from_balance",
+          "to",
+          "to_balance",
+          "value",
+          "token_address",
+          "log_index",
+          "is_removed"
+        ],
+        "properties": {
+          "block_height": {
+            "$id": "#/properties/token_transactions/items/properties/block_height",
+            "type": "integer",
+            "title": "The Block_height Schema",
+            "default": 0,
+            "examples": [
+              6164282
+            ]
+          },
+          "timestamp": {
+            "$id": "#/properties/token_transactions/items/properties/timestamp",
+            "type": "integer",
+            "title": "The Timestamp Schema",
+            "default": 0,
+            "examples": [
+              1534517636
+            ]
+          },
+          "parent_tx_hash": {
+            "$id": "#/properties/token_transactions/items/properties/parent_tx_hash",
+            "type": "string",
+            "title": "The Parent_tx_hash Schema",
+            "default": "",
+            "examples": [
+              "0x92ed9c4e798b4239caec9726d8373cee265eb7c6edfacef95003391cfd183fda"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "parent_tx_index": {
+            "$id": "#/properties/token_transactions/items/properties/parent_tx_index",
+            "type": "integer",
+            "title": "The Parent_tx_index Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          },
+          "from": {
+            "$id": "#/properties/token_transactions/items/properties/from",
+            "type": "string",
+            "title": "The From Schema",
+            "default": "",
+            "examples": [
+              "fa4b5be3f2f84f56703c42eb22142744e95a2c58"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "from_balance": {
+            "$id": "#/properties/token_transactions/items/properties/from_balance",
+            "type": "integer",
+            "title": "The From_balance Schema",
+            "default": 0,
+            "examples": [
+              2.47189136914859e+24
+            ]
+          },
+          "to": {
+            "$id": "#/properties/token_transactions/items/properties/to",
+            "type": "string",
+            "title": "The To Schema",
+            "default": "",
+            "examples": [
+              "bc0b3e5ca6986ea3309d81a6e37672d149ff5b77"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "to_balance": {
+            "$id": "#/properties/token_transactions/items/properties/to_balance",
+            "type": "integer",
+            "title": "The To_balance Schema",
+            "default": 0,
+            "examples": [
+              1.722873e+21
+            ]
+          },
+          "value": {
+            "$id": "#/properties/token_transactions/items/properties/value",
+            "type": "string",
+            "title": "The Value Schema",
+            "default": "",
+            "examples": [
+              "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABdZap5U9+SgAA="
+            ],
+            "pattern": "^(.*)$"
+          },
+          "token_address": {
+            "$id": "#/properties/token_transactions/items/properties/token_address",
+            "type": "string",
+            "title": "The Token_address Schema",
+            "default": "",
+            "examples": [
+              "5E6b6d9aBAd9093fdc861Ea1600eBa1b355Cd940"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "log_index": {
+            "$id": "#/properties/token_transactions/items/properties/log_index",
+            "type": "integer",
+            "title": "The Log_index Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          },
+          "is_removed": {
+            "$id": "#/properties/token_transactions/items/properties/is_removed",
+            "type": "boolean",
+            "title": "The Is_removed Schema",
+            "default": false,
+            "examples": [
+              false
+            ]
+          }
+        }
+      }
+    },
+    "token_infos": {
+      "$id": "#/properties/token_infos",
+      "type": "array",
+      "title": "The Token_infos Schema",
+      "items": {
+        "$id": "#/properties/token_infos/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "id",
+          "token_address",
+          "decimals",
+          "name",
+          "symbol",
+          "total_supply",
+          "owner",
+          "timestamp"
+        ],
+        "properties": {
+          "id": {
+            "$id": "#/properties/token_infos/items/properties/id",
+            "type": "integer",
+            "title": "The Id Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          },
+          "token_address": {
+            "$id": "#/properties/token_infos/items/properties/token_address",
+            "type": "string",
+            "title": "The Token_address Schema",
+            "default": "",
+            "examples": [
+              "5E6b6d9aBAd9093fdc861Ea1600eBa1b355Cd940"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "decimals": {
+            "$id": "#/properties/token_infos/items/properties/decimals",
+            "type": "integer",
+            "title": "The Decimals Schema",
+            "default": 0,
+            "examples": [
+              18
+            ]
+          },
+          "name": {
+            "$id": "#/properties/token_infos/items/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+              "IOT on Chain"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "symbol": {
+            "$id": "#/properties/token_infos/items/properties/symbol",
+            "type": "string",
+            "title": "The Symbol Schema",
+            "default": "",
+            "examples": [
+              "ITC"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "total_supply": {
+            "$id": "#/properties/token_infos/items/properties/total_supply",
+            "type": "string",
+            "title": "The Total_supply Schema",
+            "default": "",
+            "examples": [
+              "100000000000000000000000000"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "owner": {
+            "$id": "#/properties/token_infos/items/properties/owner",
+            "type": "string",
+            "title": "The Owner Schema",
+            "default": "",
+            "examples": [
+              ""
+            ],
+            "pattern": "^(.*)$"
+          },
+          "timestamp": {
+            "$id": "#/properties/token_infos/items/properties/timestamp",
+            "type": "integer",
+            "title": "The Timestamp Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          }
+        }
+      }
+    },
+    "enses": {
+      "$id": "#/properties/enses",
+      "type": "array",
+      "title": "The Enses Schema",
+      "items": {
+        "$id": "#/properties/enses/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "timestamp",
+          "hash",
+          "block_height",
+          "tx_block_index",
+          "label_hash",
+          "from",
+          "to",
+          "function_type",
+          "registration_date",
+          "bidder",
+          "deposit",
+          "owner",
+          "value",
+          "status"
+        ],
+        "properties": {
+          "timestamp": {
+            "$id": "#/properties/enses/items/properties/timestamp",
+            "type": "integer",
+            "title": "The Timestamp Schema",
+            "default": 0,
+            "examples": [
+              1534517636
+            ]
+          },
+          "hash": {
+            "$id": "#/properties/enses/items/properties/hash",
+            "type": "string",
+            "title": "The Hash Schema",
+            "default": "",
+            "examples": [
+              "0xc9861fb14f3822e60239e0e1985dcbc2b9462f9dac5b72a8dc0bcd2afc43ca73"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "block_height": {
+            "$id": "#/properties/enses/items/properties/block_height",
+            "type": "integer",
+            "title": "The Block_height Schema",
+            "default": 0,
+            "examples": [
+              6164282
+            ]
+          },
+          "tx_block_index": {
+            "$id": "#/properties/enses/items/properties/tx_block_index",
+            "type": "integer",
+            "title": "The Tx_block_index Schema",
+            "default": 0,
+            "examples": [
+              52
+            ]
+          },
+          "label_hash": {
+            "$id": "#/properties/enses/items/properties/label_hash",
+            "type": "string",
+            "title": "The Label_hash Schema",
+            "default": "",
+            "examples": [
+              "6d0fe5cea1374261da211426075995f7be031820b82fa25533e98c935a73658f"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "from": {
+            "$id": "#/properties/enses/items/properties/from",
+            "type": "string",
+            "title": "The From Schema",
+            "default": "",
+            "examples": [
+              "0xAaAd84576600440F55343249b39712468F6Ed4c1"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "to": {
+            "$id": "#/properties/enses/items/properties/to",
+            "type": "string",
+            "title": "The To Schema",
+            "default": "",
+            "examples": [
+              "0x6090A6e47849629b7245Dfa1Ca21D94cd15878Ef"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "function_type": {
+            "$id": "#/properties/enses/items/properties/function_type",
+            "type": "string",
+            "title": "The Function_type Schema",
+            "default": "",
+            "examples": [
+              "newBid"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "registration_date": {
+            "$id": "#/properties/enses/items/properties/registration_date",
+            "type": "integer",
+            "title": "The Registration_date Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          },
+          "bidder": {
+            "$id": "#/properties/enses/items/properties/bidder",
+            "type": "string",
+            "title": "The Bidder Schema",
+            "default": "",
+            "examples": [
+              "aaad84576600440f55343249b39712468f6ed4c1"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "deposit": {
+            "$id": "#/properties/enses/items/properties/deposit",
+            "type": "integer",
+            "title": "The Deposit Schema",
+            "default": 0,
+            "examples": [
+              31000000000000000
+            ]
+          },
+          "owner": {
+            "$id": "#/properties/enses/items/properties/owner",
+            "type": "string",
+            "title": "The Owner Schema",
+            "default": "",
+            "examples": [
+              ""
+            ],
+            "pattern": "^(.*)$"
+          },
+          "value": {
+            "$id": "#/properties/enses/items/properties/value",
+            "type": "integer",
+            "title": "The Value Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          },
+          "status": {
+            "$id": "#/properties/enses/items/properties/status",
+            "type": "integer",
+            "title": "The Status Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          }
+        }
+      }
+    }
+  }
+}
